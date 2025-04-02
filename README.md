@@ -1,50 +1,113 @@
-# Welcome to your Expo app 👋
+# React Native Tic Tac Toe
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A single-player Tic Tac Toe game built with React Native and Expo, featuring an unbeatable AI opponent using the minimax algorithm with alpha-beta pruning.
 
-## Get started
+## Features
 
-1. Install dependencies
+- 3x3 game grid
+- Option to play first or let computer go first
+- Unbeatable AI opponent using minimax algorithm with alpha-beta pruning
+- Beautiful and responsive UI with theme support
+- Game status display showing wins, losses, and draws
+- Ability to start new games
+- Fully responsive design that works on all screen sizes
 
-   ```bash
-   npm install
-   ```
+## Technical Details
 
-2. Start the app
+### Technologies Used
 
-   ```bash
-    npx expo start
-   ```
+- React Native
+- Expo
+- TypeScript
+- Zustand (State Management)
+- React Native Paper (UI Components)
 
-In the output, you'll find options to open the app in a
+### AI Implementation
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+The game features an unbeatable AI opponent implemented using the minimax algorithm with alpha-beta pruning. Here's how it works:
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+1. **Minimax Algorithm**: The AI evaluates all possible game states recursively, assuming both players play optimally.
+2. **Alpha-Beta Pruning**: Optimizes the minimax algorithm by cutting off branches that won't affect the final decision.
+3. **Evaluation Function**:
+   - Win: +10 (minus depth for faster wins)
+   - Loss: -10 (plus depth for slower losses)
+   - Draw: 0
 
-## Get a fresh project
+### State Management
 
-When you're ready, run:
+The game state is managed using Zustand, a lightweight state management solution. The store handles:
+
+- Board state
+- Current player
+- Game status
+- Winner tracking
+- Computer-first option
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
+- Expo CLI
+- iOS Simulator (for Mac) or Android Studio (for Android development)
+
+### Installation
+
+1. Clone the repository:
 
 ```bash
-npm run reset-project
+git clone <repository-url>
+cd tic-tac-toe
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Install dependencies:
 
-## Learn more
+```bash
+npm install
+# or
+yarn install
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+3. Start the development server:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npx expo start
+```
 
-## Join the community
+4. Run on your preferred platform:
 
-Join our community of developers creating universal apps.
+- Press `i` for iOS simulator
+- Press `a` for Android emulator
+- Scan QR code with Expo Go app on your physical device
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## How to Play
+
+1. Choose whether you want to go first or let the computer go first
+2. Click on any empty cell to make your move
+3. The computer will automatically make its move
+4. Continue until someone wins or the game is a draw
+5. Click "Reset Game" to start a new game
+
+## Project Structure
+
+```
+tic-tac-toe/
+├── app/                    # App entry point
+├── components/            # React components
+│   ├── GameBoard.tsx     # Game board UI
+│   ├── GameController.tsx # Game controls
+│   ├── GameStatus.tsx    # Game status display
+│   └── ThemeContext.tsx  # Theme provider
+├── store/                # State management
+│   └── gameStore.ts     # Game state and logic
+├── helpers/             # Utility functions
+│   └── scale.ts        # Responsive scaling
+├── hooks/              # Custom hooks
+│   └── useTheme.ts    # Theme hook
+└── constants/         # App constants
+```
+
+## Contributing
+
+Feel free to submit issues and enhancement requests!
