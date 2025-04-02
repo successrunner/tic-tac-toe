@@ -1,28 +1,32 @@
-# React Native Tic Tac Toe
+# Tic Tac Toe - React Native
 
-A single-player Tic Tac Toe game built with React Native and Expo, featuring an unbeatable AI opponent using the minimax algorithm with alpha-beta pruning.
+A modern, interactive Tic Tac Toe game built with React Native and Expo. This project showcases the implementation of a classic game with a beautiful user interface, smooth animations, and engaging gameplay features.
 
-## Features
+## 🎮 Features
 
-- 3x3 game grid
-- Option to play first or let computer go first
-- Unbeatable AI opponent using minimax algorithm with alpha-beta pruning
-- Beautiful and responsive UI with theme support
-- Game status display showing wins, losses, and draws
-- Ability to start new games
-- Fully responsive design that works on all screen sizes
+- Clean and modern UI design
+- Smooth animations and transitions
+- Haptic feedback for better user experience
+- Game state management using Zustand
+- TypeScript for type safety
+- Comprehensive test coverage
+- Cross-platform support (iOS, Android, and Web)
 
-## Technical Details
+## 🛠️ Tech Stack
 
-### Technologies Used
+- **Framework**: React Native with Expo
+- **Navigation**: Expo Router
+- **State Management**: Zustand
+- **Styling**: React Native StyleSheet
+- **Testing**: Jest & React Native Testing Library
+- **Type Checking**: TypeScript
+- **Code Quality**: ESLint & Prettier
 
-- React Native
-- Expo
-- TypeScript
-- Zustand (State Management)
-- React Native Paper (UI Components)
+## 📱 Supported Platforms
 
-### AI Implementation
+- iOS
+- Android
+- Web
 
 The game features an unbeatable AI opponent implemented using the minimax algorithm with alpha-beta pruning. Here's how it works:
 
@@ -43,26 +47,24 @@ The game state is managed using Zustand, a lightweight state management solution
 - Winner tracking
 - Computer-first option
 
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
 - Node.js (v14 or higher)
 - npm or yarn
 - Expo CLI
-- iOS Simulator (for Mac) or Android Studio (for Android development)
+- iOS Simulator (for Mac users) or Android Studio (for Android development)
 
 ### Installation
 
 1. Clone the repository:
-
 ```bash
-git clone <repository-url>
+git clone https://github.com/yourusername/tic-tac-toe.git
 cd tic-tac-toe
 ```
 
 2. Install dependencies:
-
 ```bash
 npm install
 # or
@@ -70,42 +72,60 @@ yarn install
 ```
 
 3. Start the development server:
-
 ```bash
-npx expo start
+npm start
+# or
+yarn start
 ```
 
 4. Run on your preferred platform:
+```bash
+# For iOS
+npm run ios
 
-- Press `i` for iOS simulator
-- Press `a` for Android emulator
-- Scan QR code with Expo Go app on your physical device
+# For Android
+npm run android
 
-## How to Play
+# For Web
+npm run web
+```
 
-1. Choose whether you want to go first or let the computer go first
-2. Click on any empty cell to make your move
-3. The computer will automatically make its move
-4. Continue until someone wins or the game is a draw
-5. Click "Reset Game" to start a new game
+## 🧪 Testing
 
-## Project Structure
+Run the test suite:
+```bash
+npm test
+# or
+yarn test
+```
+
+## 📝 Code Quality
+
+The project uses ESLint and Prettier for code quality and formatting. Run the following commands:
+
+```bash
+# Format code
+npm run format
+
+# Lint code
+npm run lint
+
+# Fix linting issues
+npm run lint:fix
+```
+
+## 🏗️ Project Structure
 
 ```
 tic-tac-toe/
-├── app/                    # App entry point
-├── components/            # React components
-│   ├── GameBoard.tsx     # Game board UI
-│   ├── GameController.tsx # Game controls
-│   ├── GameStatus.tsx    # Game status display
-│   └── ThemeContext.tsx  # Theme provider
-├── store/                # State management
-│   └── gameStore.ts     # Game state and logic
-├── helpers/             # Utility functions
-│   └── scale.ts        # Responsive scaling
-├── hooks/              # Custom hooks
-│   └── useTheme.ts    # Theme hook
-└── constants/         # App constants
+├── app/                    # Main application screens
+├── components/            # Reusable UI components
+├── constants/             # App-wide constants
+├── hooks/                 # Custom React hooks
+├── libs/                  # Utility libraries
+├── store/                 # Zustand store
+├── assets/               # Static assets
+└── __tests__/            # Test files
 ```
 
 ## Contributing
