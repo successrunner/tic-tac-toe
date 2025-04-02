@@ -59,12 +59,14 @@ The game state is managed using Zustand, a lightweight state management solution
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/yourusername/tic-tac-toe.git
 cd tic-tac-toe
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 # or
@@ -72,6 +74,7 @@ yarn install
 ```
 
 3. Start the development server:
+
 ```bash
 npm start
 # or
@@ -79,6 +82,7 @@ yarn start
 ```
 
 4. Run on your preferred platform:
+
 ```bash
 # For iOS
 npm run ios
@@ -93,6 +97,7 @@ npm run web
 ## 🧪 Testing
 
 Run the test suite:
+
 ```bash
 npm test
 # or

@@ -12,7 +12,7 @@ export default function GameStatus() {
 
   const getStatusText = () => {
     if (gameStatus === 'won') {
-      return `${winner} wins!`;
+      return winner === 'Computer' ? 'You Lost!' : 'You Won!';
     }
     if (gameStatus === 'draw') {
       return "It's a draw!";
@@ -38,7 +38,17 @@ export default function GameStatus() {
         { backgroundColor: theme.colors.backgroundSecondary },
       ]}
     >
-      <Text style={[styles.text, { color: theme.colors.mutedForeground }]}>
+      <Text
+        style={[
+          styles.text,
+          {
+            color:
+              winner === 'Computer'
+                ? theme.colors.backgroundDestructive
+                : theme.colors.mutedForeground,
+          },
+        ]}
+      >
         {getStatusText()}
       </Text>
       {currentPlayer && gameStatus === 'playing' && (
